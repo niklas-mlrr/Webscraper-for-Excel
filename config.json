@@ -6,17 +6,16 @@
   
   "entries": [
     {
-      "url": "https://iserv-trg-oha.de/iserv/",
-      "elementToRead": "//*[@id=\"idesk-sidebar\"]/div[1]/div/span/a",
+      "url": "https://iserv-trg-oha.de/iserv/ausleihe/myprofile",
+      "iFrameToSwitchTo": "ausleihe-frame",
+      "elementToRead": "//*[@id=\"sbl-app\"]/div/ui-view/div/div[2]/div[2]/div/div[2]/div[2]/div[2]/div/ul/li/div/div[2]/div/strong",
       "excelCell": "B5"
     },
     {
-      "elementToRead": "//*[@id=\"dashboard-calendar\"]/ul/li[2]/div/span",
+      "url": "https://iserv-trg-oha.de/iserv/ausleihe/myprofile",
+      "iFrameToSwitchTo": "ausleihe-frame",
+      "elementToRead": "//*[@id=\"sbl-app\"]/div/ui-view/div/div[2]/div[2]/div/div[2]/h3",
       "excelCell": "C5"
-    },
-    {
-      "elementToRead": "//*[@id=\"idesk-sidebar\"]/div[3]/div[2]",
-      "excelCell": "D5"
     }
   ]
 }

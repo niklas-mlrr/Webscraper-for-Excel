@@ -40,7 +40,10 @@ def navigate_to_entry(driver, entry):
 
 
     if "iFrameToSwitchTo" in entry:
-        driver.switch_to.frame(entry["iFrameToSwitchTo"])
+        if entry["iFrameToSwitchTo"] == "default":
+            driver.switch_to.default_content()
+        else:
+            driver.switch_to.frame(entry["iFrameToSwitchTo"])
 
 
     for key in ["elementOneToClickOn", "elementTwoToClickOn", "elementThreeToClickOn"]:
