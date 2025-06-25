@@ -18,6 +18,7 @@ import ctypes
 changed_cells = []
 change_count = 0
 timeout_for_pageload = 30
+waiting_time_between_elements = 2.5
 
 
 def login(driver, config):
@@ -27,8 +28,10 @@ def login(driver, config):
     WebDriverWait(driver, timeout_for_pageload).until(EC.presence_of_element_located((By.TAG_NAME, "body")))
 
     terminal_window.activate()
+    est_runtime = (len(config['entries']) * waiting_time_between_elements + 20)/60
+    est_runtime = round(est_runtime, 2)
     input("\n\n\nMelden Sie sich im (gerade automatisch geöffnetem) IServ-Browserfenster an und \ndrücken Sie (in diesem Terminal-Fenster) Enter, wenn Sie eingeloggt sind.\n")
-    print("Daten werden nun aktualisiert...\nInteragieren Sie nun bitte nicht mehr mit dem Browserfenster.")
+    print(f"Daten werden nun aktualisiert...\nGeschätzte Gesamtlaufzeit: {est_runtime} Minuten\nInteragieren Sie nun bitte nicht mehr mit dem Browserfenster.")
  
 
 

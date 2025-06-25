@@ -20,6 +20,7 @@ sheet = excel_file[config["excelSheetName"]]
 
 for entry in config["entries"]:
     navigate_to_entry(driver, entry)
+    time.sleep(waiting_time_between_elements)
     WebDriverWait(driver, timeout_for_pageload).until(EC.presence_of_element_located((By.XPATH, entry["elementToRead"])))
     new_content = driver.find_element(By.XPATH, entry["elementToRead"]).text
 
